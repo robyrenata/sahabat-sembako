@@ -1,0 +1,12 @@
+#section-wrapper {
+  height: auto;
+}
+
+.wrapper {
+  background: white url("/assets/img/bg-header.svg") repeat-x fixed center
+    center;
+
+  app-header {
+    z-index: 100;
+  }
+}

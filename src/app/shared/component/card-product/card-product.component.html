@@ -1,0 +1,31 @@
+<div class="card">
+  <div class="card-body">
+    <div class="container">
+      <div class="ribbon ribbon-top-right" *ngIf="product.featured">
+        <span>Produk Unggulan</span>
+      </div>
+      <div class="row">
+        <div class="col">
+          <img src="{{ product.img }}" alt="" width="100%" />
+        </div>
+      </div>
+      <div class="row tobe-mid text-center text-desc">
+        <div class="col-12">
+          <span>{{ product.name }}</span>
+        </div>
+        <div class="col-12">
+          <span>Rp. {{ product.price | number }}</span>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="card-footer">
+    <button
+      type="button"
+      class="btn btn-block btn-sembako"
+      (click)="redirectToTokped(product.name)"
+    >
+      Pesan Sekarang!
+    </button>
+  </div>
+</div>

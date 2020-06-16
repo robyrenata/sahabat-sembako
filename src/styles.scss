@@ -1,1 +1,50 @@
 /* You can add global styles to this file, and also import other style files */
+@import "~bootstrap/dist/css/bootstrap.css";
+@import url("https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap");
+
+$sembako-text: #436f8a;
+$sembako-primary: #438a5e;
+$sembako-secondary: #bac964;
+$sembako-light: #f7fbe1;
+
+html,
+body {
+  font-family: "Lato", sans-serif !important;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  color: $sembako-text;
+}
+
+.tobe-mid {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.pointer {
+  &:hover {
+    cursor: pointer;
+    text-decoration: underline;
+  }
+}
+
+.card {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.btn-sembako {
+  color: #fff;
+  background-color: $sembako-primary;
+  border-color: $sembako-secondary;
+
+  &:hover {
+    color: #fff;
+    background-color: $sembako-secondary;
+    border-color: $sembako-primary;
+  }
+}
+
+.title-head {
+  color: $sembako-primary;
+  text-transform: uppercase;
+}

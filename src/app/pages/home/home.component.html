@@ -1,0 +1,67 @@
+<div class="row wrapper mb-5">
+  <div class="col-12 mb-2">
+    <app-header></app-header>
+  </div>
+  <div class="col-12 mt-5">
+    <app-banner></app-banner>
+  </div>
+</div>
+
+<div class="row tobe-mid mb-5" id="section-wrapper">
+  <div class="col-12">
+    <div class="container">
+      <div class="row">
+        <div class="col-12">
+          <h2 class="title-head">Tentang Kami</h2>
+          <hr />
+        </div>
+
+        <div class="col-12">
+          <app-about></app-about>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="row tobe-mid mb-5" id="section-wrapper">
+  <div class="col-12 pb-3">
+    <div class="container">
+      <div class="row mb-2 tobe-mid">
+        <div class="col text-left">
+          <h2 class="title-head">Ragam Produk</h2>
+          <hr />
+        </div>
+        <div class="col-xs-12 col-sm-12 col-md-6 col-lg-3 col-xl-3 text-right">
+          <span class="pointer"
+            >Lihat Selengkapnya <i class="fas fa-caret-right"></i
+          ></span>
+        </div>
+      </div>
+      <div class="row">
+        <div
+          class="col-xs-12 col-sm-12 col-md-6 col-lg-3 col-xl-3 mt-2 mb-2"
+          *ngFor="let prd of productList.slice(0, 4)"
+        >
+          <app-card-product [product]="prd"></app-card-product>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="row tobe-mid mb-5" id="section-wrapper">
+  <div class="col-12 pb-3">
+    <div class="container">
+      <div class="row mb-2 tobe-mid">
+        <div class="col">
+          <h2 class="title-head">Pengiriman</h2>
+          <hr />
+        </div>
+      </div>
+      <div class="row">
+        <app-shipment [shipping]="shippingList"></app-shipment>
+      </div>
+    </div>
+  </div>
+</div>
