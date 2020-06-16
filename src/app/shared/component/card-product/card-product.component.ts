@@ -10,9 +10,7 @@ export class CardProductComponent implements OnInit {
   @Input() product: any;
   constructor() {}
 
-  ngOnInit() {
-    console.log("prod input", this.product);
-  }
+  ngOnInit() {}
 
   redirectToTokped(path) {
     const sanitized = path.replace(/\s+/g, "-").toLowerCase();

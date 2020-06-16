@@ -10,9 +10,7 @@ import dataShipping from "./../../../assets/data/shipping-list.json";
 export class HomeComponent implements OnInit {
   productList = dataProduct;
   shippingList = dataShipping;
-  constructor() {
-    console.log("data", this.shippingList);
-  }
+  constructor() {}
 
   ngOnInit() {}
 }
