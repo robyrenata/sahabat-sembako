@@ -1,4 +1,10 @@
+@import "./../../../../styles.scss";
+
 #logo {
   width: 100px;
   height: auto;
+}
+
+.pointer {
+  color: $sembako-primary;
 }

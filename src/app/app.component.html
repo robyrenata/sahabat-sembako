@@ -1,1 +1,13 @@
-<router-outlet></router-outlet>
+<div class="row">
+  <div class="col-12 mb-2">
+    <app-header></app-header>
+  </div>
+</div>
+<div
+  class="row mb-3 mt-3"
+  [@routerAnimation]="o.isActivated ? o.activatedRoute : ''"
+>
+  <div class="col-12">
+    <router-outlet #o="outlet"></router-outlet>
+  </div>
+</div>

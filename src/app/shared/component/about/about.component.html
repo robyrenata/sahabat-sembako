@@ -1,16 +1,46 @@
 <div class="row tobe-mid text-center">
-  <div class="col-xl-6 col-lg-6 col-md-12 col-sm-12 col-xs-12">
+  <div
+    [ngClass]="
+      router.url === '/home'
+        ? 'col-xl-6 col-lg-6 col-md-12 col-sm-12 col-xs-12'
+        : 'col-12 mb-5'
+    "
+  >
     <img src="/assets/logo/logo-square.png" alt="logo_square" width="300" />
   </div>
-  <div class="col-xl-6 col-lg-6 col-md-12 col-sm-12 col-xs-12">
+  <div
+    [ngClass]="
+      router.url === '/home'
+        ? 'col-xl-6 col-lg-6 col-md-12 col-sm-12 col-xs-12'
+        : 'col-12'
+    "
+  >
     <div class="card text-justify">
       <div class="card-body">
-        <p class="lead">
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Libero iste
-          deserunt voluptatum, vero voluptates excepturi, in nemo ad velit ut
-          numquam temporibus harum dolor dolore officia? Ullam exercitationem ex
-          illo!
-        </p>
+        <div class="row">
+          <div class="col-12">
+            <p
+              class="lead"
+              [ngClass]="{ 'tobe-truncate': router.url === '/home' }"
+            >
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Libero
+              iste deserunt voluptatum, vero voluptates excepturi, in nemo ad
+              velit ut numquam temporibus harum dolor dolore officia? Ullam
+              exercitationem ex illo! Lorem ipsum dolor sit amet consectetur
+              adipisicing elit. Libero iste deserunt voluptatum, vero voluptates
+              excepturi, in nemo ad velit ut numquam temporibus harum dolor
+              dolore officia? Ullam exercitationem ex illo!
+            </p>
+          </div>
+          <div class="col-12 text-right" *ngIf="router.url === '/home'">
+            <span
+              class="pointer"
+              [routerLink]="['/about']"
+              routerLinkActive="router-link-active"
+              >Selengkapnya..</span
+            >
+          </div>
+        </div>
       </div>
     </div>
   </div>

@@ -1,23 +1,41 @@
-<div class="text-white" style="z-index: 100;">
-  <div class="container">
-    <div class="row tobe-mid text-center">
-      <div class="col">
-        <img src="/assets/logo/logo-square.png" alt="logo_square" id="logo" />
-      </div>
+<div class="container">
+  <div class="row tobe-mid text-center">
+    <div class="col">
+      <img src="/assets/logo/logo-square.png" alt="logo_square" id="logo" />
     </div>
-    <div class="row tobe-mid text-center">
-      <div class="col">
-        <span class="pointer">Beranda</span>
-      </div>
-      <div class="col">
-        <span class="pointer">Produk</span>
-      </div>
-      <div class="col">
-        <span class="pointer">Tentang Kami</span>
-      </div>
-      <div class="col">
-        <span class="pointer">Kontak</span>
-      </div>
+  </div>
+  <div class="row tobe-mid text-center">
+    <div class="col-xs-12 col-sm-12 col-md-6 col-lg-3 col-xl-3 p-sm-2 p-md-2">
+      <span
+        class="pointer"
+        [routerLink]="['/home']"
+        routerLinkActive="router-link-active"
+        ><i class="fas fa-home"></i>&nbsp;Beranda</span
+      >
+    </div>
+    <div class="col-xs-12 col-sm-12 col-md-6 col-lg-3 col-xl-3 p-sm-2 p-md-2">
+      <span
+        class="pointer"
+        [routerLink]="['/products']"
+        routerLinkActive="router-link-active"
+        ><i class="fas fa-list-ul"></i>&nbsp;Produk</span
+      >
+    </div>
+    <div class="col-xs-12 col-sm-12 col-md-6 col-lg-3 col-xl-3 p-sm-2 p-md-2">
+      <span
+        class="pointer"
+        [routerLink]="['/about']"
+        routerLinkActive="router-link-active"
+        ><i class="fas fa-info"></i>&nbsp;Tentang Kami</span
+      >
+    </div>
+    <div class="col-xs-12 col-sm-12 col-md-6 col-lg-3 col-xl-3 p-sm-2 p-md-2">
+      <span
+        class="pointer"
+        [routerLink]="['/contact']"
+        routerLinkActive="router-link-active"
+        ><i class="fas fa-id-card-alt"></i>&nbsp;Kontak</span
+      >
     </div>
   </div>
 </div>

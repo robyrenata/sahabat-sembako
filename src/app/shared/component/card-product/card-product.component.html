@@ -20,12 +20,40 @@
     </div>
   </div>
   <div class="card-footer">
-    <button
-      type="button"
-      class="btn btn-block btn-sembako"
-      (click)="redirectToTokped(product.name)"
-    >
-      Pesan Sekarang!
-    </button>
+    <div class="row tobe-mid">
+      <div class="col">
+        <button
+          type="button"
+          class="btn btn-block btn-sembako"
+          (click)="redirectToTokped(product.name)"
+        >
+          Pesan Sekarang!
+        </button>
+      </div>
+      <div class="col-1 text-left">
+        <span
+          class="pointer"
+          (click)="openModalDetail(modaldetail, product.description)"
+          ><i class="fas fa-info"></i
+        ></span>
+      </div>
+    </div>
   </div>
 </div>
+
+<ng-template #modaldetail>
+  <div class="modal-header">
+    <h4 class="modal-title pull-left font-weight-bold">Deskripsi Produk</h4>
+    <button
+      type="button"
+      class="close pull-right"
+      aria-label="Close"
+      (click)="modalRef.hide()"
+    >
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+  <div class="modal-body">
+    <div [innerHTML]="descData"></div>
+  </div>
+</ng-template>

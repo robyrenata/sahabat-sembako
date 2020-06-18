@@ -7,6 +7,12 @@ $sembako-primary: #438a5e;
 $sembako-secondary: #bac964;
 $sembako-light: #f7fbe1;
 
+router-outlet ~ * {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+}
+
 html,
 body {
   font-family: "Lato", sans-serif !important;
@@ -30,6 +36,11 @@ body {
 
 .card {
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+
+  .card-footer {
+    background-color: white;
+    border: none;
+  }
 }
 
 .btn-sembako {
@@ -47,4 +58,51 @@ body {
 .title-head {
   color: $sembako-primary;
   text-transform: uppercase;
+}
+
+.wrapper-paralax {
+  background: white url("/assets/img/bg-header.svg") repeat-x fixed center
+    center;
+
+  color: white !important;
+}
+
+select:focus,
+textarea:focus,
+input[type="text"]:focus,
+input[type="password"]:focus,
+input[type="datetime"]:focus,
+input[type="datetime-local"]:focus,
+input[type="date"]:focus,
+input[type="month"]:focus,
+input[type="time"]:focus,
+input[type="week"]:focus,
+input[type="number"]:focus,
+input[type="email"]:focus,
+input[type="url"]:focus,
+input[type="search"]:focus,
+input[type="tel"]:focus,
+input[type="color"]:focus,
+.uneditable-input:focus {
+  border-color: $sembako-primary;
+  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.075) inset, 0 0 8px $sembako-secondary;
+  outline: 0 none;
+}
+
+.modal-dialog {
+  min-height: calc(100vh - 60px);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  overflow: auto;
+  @media (max-width: 768px) {
+    min-height: calc(100vh - 20px);
+  }
+}
+
+.tobe-truncate {
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-line-clamp: 5;
+  -webkit-box-orient: vertical;
 }
