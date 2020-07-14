@@ -15,11 +15,61 @@
   </div>
   <div class="row">
     <div class="col">
-      <button class="btn btn-block btn-lg btn-sembako" (click)="goToTokped()">
-        Selengkapnya di Tokopedia
+      <button
+        class="btn btn-block btn-lg btn-sembako"
+        (click)="openModalRedirect(modalredirect)"
+      >
+        {{ "SEE_MORE" | translate }}
       </button>
     </div>
   </div>
 </div>
 
 <app-footer></app-footer>
+
+<ng-template #modalredirect>
+  <div class="modal-header">
+    <h4 class="modal-title pull-left font-weight-bold">
+      {{ "SELECT_PLATFORM" | translate }}
+    </h4>
+    <button
+      type="button"
+      class="close pull-right"
+      aria-label="Close"
+      (click)="modalRef.hide()"
+    >
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+  <div class="modal-body">
+    <div class="row justify-content-center tobe-mid">
+      <div class="col-xs-12 col-sm-12 col-md-12 col-lg-4 col-xl-4">
+        <img
+          src="https://4.bp.blogspot.com/-j4SyZdrtYTY/XgrrFX4kaUI/AAAAAAAABQQ/RihCfdGXpdkIQUSo3PKFbZFPEijrYejaQCLcBGAsYHQ/s1600/tokopedia.png"
+          alt="tokped_logo"
+          width="100%"
+          class="pointer"
+          (click)="redirectPath('tokopedia')"
+        />
+      </div>
+      <div class="col-xs-12 col-sm-12 col-md-12 col-lg-4 col-xl-4 pointer">
+        <img
+          src="https://s1.bukalapak.com/ast/sigil/bukalapak-logo-primary.svg"
+          alt="bukalapak_logo"
+          width="100%"
+          class="pointer"
+          (click)="redirectPath('bukalapak')"
+        />
+      </div>
+      <div class="col-xs-12 col-sm-12 col-md-12 col-lg-4 col-xl-4 pointer">
+        <img
+          src="https://massakublog.files.wordpress.com/2017/04/blibli-logo.png?w=532"
+          alt="blibli_logo"
+          width="100%"
+          class="pointer"
+          (click)="redirectPath('blibli')"
+        />
+      </div>
+    </div>
+  </div>
+</ng-template>
