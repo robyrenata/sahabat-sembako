@@ -15,9 +15,22 @@ export class CardProductComponent implements OnInit {
 
   ngOnInit() {}
 
-  redirectToTokped(path) {
-    const sanitized = path.replace(/\s+/g, "-").toLowerCase();
-    window.open(environment.url_tokped + sanitized, "_BLANK");
+  redirectPath(path) {
+    // window.open(environment.url_tokped + sanitized, "_BLANK");
+    let url = "";
+    switch (path) {
+      case "tokopedia":
+        url = environment.url_tokopedia;
+        break;
+      case "bukalapak":
+        url = environment.url_bukalapak;
+        break;
+      case "blibli":
+        url = environment.url_blibli;
+        break;
+    }
+    this.modalRef.hide();
+    window.open(url, "_BLANK");
   }
 
   openModalDetail(template: TemplateRef<any>, data) {
@@ -26,6 +39,14 @@ export class CardProductComponent implements OnInit {
       animated: true,
       keyboard: true,
       class: "modal-md",
+    });
+  }
+
+  openModalRedirect(template: TemplateRef<any>) {
+    this.modalRef = this.modalSrv.show(template, {
+      animated: true,
+      keyboard: true,
+      class: "modal-lg",
     });
   }
 }

@@ -4,6 +4,7 @@ import { AboutUsComponent } from "./about-us.component";
 import { Routes, RouterModule } from "@angular/router";
 import { AboutModule } from "src/app/shared/component/about/about.module";
 import { FooterModule } from "src/app/shared/component/footer/footer.module";
+import { SharedModule } from "src/app/shared/shared.module";
 
 const routes: Routes = [
   {
@@ -19,6 +20,7 @@ const routes: Routes = [
     RouterModule.forChild(routes),
     AboutModule,
     FooterModule,
+    SharedModule,
   ],
 })
 export class AboutUsModule {}

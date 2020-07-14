@@ -1,7 +1,7 @@
 <div class="container">
   <div class="row tobe-mid text-center">
-    <div class="col">
-      <img src="/assets/logo/logo-square.png" alt="logo_square" id="logo" />
+    <div class="col pt-4 pb-4">
+      <img src="/assets/logo/logo-text.png" alt="logo_text" id="logo" />
     </div>
   </div>
   <div class="row tobe-mid text-center">
@@ -10,7 +10,7 @@
         class="pointer"
         [routerLink]="['/home']"
         routerLinkActive="router-link-active"
-        ><i class="fas fa-home"></i>&nbsp;Beranda</span
+        ><i class="fas fa-home"></i>&nbsp;{{ "HOME" | translate }}</span
       >
     </div>
     <div class="col-xs-12 col-sm-12 col-md-6 col-lg-3 col-xl-3 p-sm-2 p-md-2">
@@ -18,7 +18,7 @@
         class="pointer"
         [routerLink]="['/products']"
         routerLinkActive="router-link-active"
-        ><i class="fas fa-list-ul"></i>&nbsp;Produk</span
+        ><i class="fas fa-list-ul"></i>&nbsp;{{ "PRODUCT" | translate }}</span
       >
     </div>
     <div class="col-xs-12 col-sm-12 col-md-6 col-lg-3 col-xl-3 p-sm-2 p-md-2">
@@ -26,7 +26,7 @@
         class="pointer"
         [routerLink]="['/about']"
         routerLinkActive="router-link-active"
-        ><i class="fas fa-info"></i>&nbsp;Tentang Kami</span
+        ><i class="fas fa-info"></i>&nbsp;{{ "ABOUT_US" | translate }}</span
       >
     </div>
     <div class="col-xs-12 col-sm-12 col-md-6 col-lg-3 col-xl-3 p-sm-2 p-md-2">
@@ -34,8 +34,16 @@
         class="pointer"
         [routerLink]="['/contact']"
         routerLinkActive="router-link-active"
-        ><i class="fas fa-id-card-alt"></i>&nbsp;Kontak</span
+        ><i class="fas fa-id-card-alt"></i>&nbsp;{{
+          "CONTACT" | translate
+        }}</span
       >
+    </div>
+  </div>
+  <div class="row tobe-mid justify-content-center text-center">
+    <div class="col">
+      <span class="pointer" (click)="setLang('id')">Indonesia</span> |
+      <span class="pointer" (click)="setLang('en')">English</span>
     </div>
   </div>
 </div>

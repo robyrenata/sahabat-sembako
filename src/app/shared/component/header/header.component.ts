@@ -1,5 +1,6 @@
 import { Component, OnInit } from "@angular/core";
 import { Router } from "@angular/router";
+import { TranslateService } from "../../pipes/translate/translate.service";
 
 @Component({
   selector: "app-header",
@@ -7,7 +8,13 @@ import { Router } from "@angular/router";
   styleUrls: ["./header.component.scss"],
 })
 export class HeaderComponent implements OnInit {
-  constructor(private router: Router) {}
+  selectedLang = "id";
+  constructor(private router: Router, private translateSrv: TranslateService) {}
 
   ngOnInit() {}
+
+  setLang(lang) {
+    this.selectedLang = lang;
+    this.translateSrv.setLanguage(lang);
+  }
 }

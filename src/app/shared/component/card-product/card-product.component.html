@@ -2,7 +2,7 @@
   <div class="card-body">
     <div class="container">
       <div class="ribbon ribbon-top-right" *ngIf="product.featured">
-        <span>Produk Unggulan</span>
+        <span>{{ "FEATURED_PRODUCT" | translate }}</span>
       </div>
       <div class="row">
         <div class="col">
@@ -25,9 +25,9 @@
         <button
           type="button"
           class="btn btn-block btn-sembako"
-          (click)="redirectToTokped(product.name)"
+          (click)="openModalRedirect(modalredirect)"
         >
-          Pesan Sekarang!
+          {{ "ORDER_NOW" | translate }}
         </button>
       </div>
       <div class="col-1 text-left">
@@ -43,7 +43,9 @@
 
 <ng-template #modaldetail>
   <div class="modal-header">
-    <h4 class="modal-title pull-left font-weight-bold">Deskripsi Produk</h4>
+    <h4 class="modal-title pull-left font-weight-bold">
+      {{ "PRODUCT_DESC" | translate }}
+    </h4>
     <button
       type="button"
       class="close pull-right"
@@ -55,5 +57,52 @@
   </div>
   <div class="modal-body">
     <div [innerHTML]="descData"></div>
+  </div>
+</ng-template>
+
+<ng-template #modalredirect>
+  <div class="modal-header">
+    <h4 class="modal-title pull-left font-weight-bold">
+      {{ "SELECT_PLATFORM" | translate }}
+    </h4>
+    <button
+      type="button"
+      class="close pull-right"
+      aria-label="Close"
+      (click)="modalRef.hide()"
+    >
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+  <div class="modal-body">
+    <div class="row justify-content-center tobe-mid">
+      <div class="col-xs-12 col-sm-12 col-md-12 col-lg-4 col-xl-4">
+        <img
+          src="https://4.bp.blogspot.com/-j4SyZdrtYTY/XgrrFX4kaUI/AAAAAAAABQQ/RihCfdGXpdkIQUSo3PKFbZFPEijrYejaQCLcBGAsYHQ/s1600/tokopedia.png"
+          alt="tokped_logo"
+          width="100%"
+          class="pointer"
+          (click)="redirectPath('tokopedia')"
+        />
+      </div>
+      <div class="col-xs-12 col-sm-12 col-md-12 col-lg-4 col-xl-4 pointer">
+        <img
+          src="https://s1.bukalapak.com/ast/sigil/bukalapak-logo-primary.svg"
+          alt="bukalapak_logo"
+          width="100%"
+          class="pointer"
+          (click)="redirectPath('bukalapak')"
+        />
+      </div>
+      <div class="col-xs-12 col-sm-12 col-md-12 col-lg-4 col-xl-4 pointer">
+        <img
+          src="https://massakublog.files.wordpress.com/2017/04/blibli-logo.png?w=532"
+          alt="blibli_logo"
+          width="100%"
+          class="pointer"
+          (click)="redirectPath('blibli')"
+        />
+      </div>
+    </div>
   </div>
 </ng-template>

@@ -7,6 +7,7 @@ import { AboutModule } from "src/app/shared/component/about/about.module";
 import { CardProductModule } from "src/app/shared/component/card-product/card-product.module";
 import { ShipmentModule } from "src/app/shared/component/shipment/shipment.module";
 import { FooterModule } from "src/app/shared/component/footer/footer.module";
+import { SharedModule } from "src/app/shared/shared.module";
 
 const routes: Routes = [
   {
@@ -25,6 +26,7 @@ const routes: Routes = [
     CardProductModule,
     ShipmentModule,
     FooterModule,
+    SharedModule,
   ],
 })
 export class HomeModule {}
